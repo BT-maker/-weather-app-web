@@ -1,0 +1,178 @@
+/* Tüm HTML elemanları için varsayılan ayarlar */
+* {
+    margin: 0; /* Tüm kenar boşluklarını sıfırlar */
+    padding: 0; /* Tüm iç boşlukları sıfırlar */
+    box-sizing: border-box; /* Elemanın boyutunu padding ve border dahil hesaplar */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Genel yazı tipi ailesi */
+}
+
+/* <body> etiketi için genel stiller */
+body {
+    min-height: 100vh; /* Sayfa yüksekliği en az ekran yüksekliği kadar olur */
+    display: flex; /* İçeriği hizalamak için esnek kutu modeli kullanılır */
+    justify-content: center; /* İçeriği yatayda ortalar */
+    align-items: center; /* İçeriği dikeyde ortalar */
+    padding: 20px; /* Tüm kenarlardan 20px iç boşluk */
+    background-image: url('../img/storm.jpg'); /* Arka plan resmi */
+    background-size: cover; /* Resim tüm alanı kaplar */
+    background-position: center; /* Resim ortalanır */
+    background-repeat: no-repeat; /* Resim tekrar etmez */
+    background-attachment: fixed; /* Arka plan sabit kalır, kaydırmada hareket etmez */
+}
+
+/* Varsayılan arka plan renk geçişi */
+body.default-bg {
+    background: linear-gradient(135deg, #00b4db, #0083b0); /* Açılı renk geçişli arka plan */
+}
+
+/* Güneşli hava arka planı */
+body.sunny-bg {
+    background-image: url('../img/sunny.jpg'); /* Güneşli hava görseli */
+}
+
+/* Yağmurlu hava arka planı */
+body.rainy-bg {
+    background-image: url('../img/rainy.jpg'); /* Yağmurlu hava görseli */
+}
+
+/* Bulutlu hava arka planı */
+body.cloudy-bg {
+    background-image: url('../img/cloudy.jpg'); /* Bulutlu hava görseli */
+}
+
+/* Karlı hava arka planı */
+body.snowy-bg {
+    background-image: url('../img/snowy.jpg'); /* Karlı hava görseli */
+}
+
+/* Ana kutu (container) stilleri */
+.container {
+    background: rgba(255, 255, 255, 0.5); /* Beyaz ama yarı saydam arka plan */
+    padding: 30px; /* İç boşluk */
+    border-radius: 15px; /* Kenarları yuvarlat */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+    width: 100%; /* Genişlik %100 */
+    max-width: 500px; /* Maksimum genişlik 500px */
+    backdrop-filter: blur(5px); /* Arka planı hafif bulanıklaştır */
+}
+
+/* Başlık etiketi (h1) */
+h1 {
+    text-align: center; /* Ortalı metin */
+    color: #333; /* Koyu gri yazı rengi */
+    margin-bottom: 30px; /* Alt boşluk */
+}
+
+/* Arama kutusu ve buton kapsayıcısı */
+.search-container {
+    display: flex; /* Elemanları yatayda dizer */
+    gap: 10px; /* Elemanlar arası boşluk */
+    margin-bottom: 30px; /* Alt boşluk */
+}
+
+/* Metin girişi alanı */
+input[type="text"] {
+    background: rgba(255, 255, 255, 0.5); /* Saydam beyaz arka plan */
+    flex: 1; /* Esnek genişlik */
+    padding: 12px; /* İç boşluk */
+    border: 2px solid #ddd; /* Açık gri kenarlık */
+    border-radius: 8px; /* Yuvarlatılmış kenarlar */
+    font-size: 16px; /* Yazı boyutu */
+    outline: none; /* Tıklanınca mavi çerçeve görünmez */
+    transition: border-color 0.3s; /* Kenar rengi değişim animasyonu */
+}
+
+/* Metin kutusuna odaklanıldığında */
+input[type="text"]:focus {
+    border-color: #0083b0; /* Mavi tonlu kenarlık */
+}
+
+/* Arama butonu */
+button {
+    background: #0083b0; /* Mavi arka plan */
+    color: white; /* Beyaz yazı */
+    border: none; /* Kenarlık yok */
+    padding: 12px 20px; /* İç boşluk (dikey x yatay) */
+    border-radius: 8px; /* Yuvarlak köşeler */
+    cursor: pointer; /* Üzerine gelince imleç değişir */
+    transition: background 0.3s; /* Renk geçiş efekti */
+}
+
+/* Butonun üzerine gelindiğinde */
+button:hover {
+    background: #006b8f; /* Daha koyu mavi */
+}
+
+/* Hava durumu kartı */
+.weather-card {
+    background: rgba(255, 255, 255, 0.5); /* Yarı saydam beyaz arka plan */
+    border-radius: 12px; /* Yuvarlak kenarlar */
+    padding: 20px; /* İç boşluk */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+}
+
+/* Hava bilgilerini ortalamak için */
+.weather-info {
+    text-align: center; /* Ortalı içerik */
+}
+
+/* Alt başlıklar */
+h2 {
+    color: #333; /* Koyu gri yazı */
+    margin-bottom: 15px; /* Alt boşluk */
+}
+
+/* Hava durumu simgesi kapsayıcısı */
+.weather-icon {
+    margin: 20px 0; /* Üst ve alt boşluk */
+}
+
+/* Hava durumu ikonu resmi */
+.weather-icon img {
+    width: 100px; /* Genişlik */
+    height: 100px; /* Yükseklik */
+    object-fit: contain; /* Resim orantılı şekilde sığdırılır */
+}
+
+/* Sıcaklık yazısı */
+.temperature {
+    font-size: 48px; /* Büyük yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+    color: #0083b0; /* Mavi tonlu yazı */
+    margin-bottom: 10px; /* Alt boşluk */
+}
+
+/* Santigrat gibi birimler */
+.unit {
+    font-size: 24px; /* Daha küçük yazı */
+    vertical-align: super; /* Üst simge (süperscript) */
+}
+
+/* Hava durumu açıklaması */
+.description {
+    font-size: 20px; /* Yazı boyutu */
+    color: #666; /* Gri yazı rengi */
+    margin-bottom: 20px; /* Alt boşluk */
+    text-transform: capitalize; /* İlk harf büyük */
+}
+
+/* Diğer detaylar için kapsayıcı */
+.details {
+    display: flex; /* Yatay dizilim */
+    justify-content: space-around; /* Eşit aralık */
+    margin-top: 20px; /* Üst boşluk */
+}
+
+/* Detay öğesi (rüzgar, nem vb.) */
+.detail-item {
+    display: flex; /* İkon ve yazıyı yan yana koy */
+    align-items: center; /* Dikeyde hizala */
+    gap: 8px; /* Aralarında boşluk */
+    color: #666; /* Yazı rengi gri */
+}
+
+/* Detay içindeki ikon */
+.detail-item i {
+    color: #0083b0; /* İkon rengi mavi */
+    font-size: 20px; /* İkon boyutu */
+}
